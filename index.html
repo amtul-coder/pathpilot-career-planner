@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111827">
+<title>PathPilot — Career Planner</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="#"><span class="logo-mark">PP</span><span>PathPilot</span></a>
+  <nav><a href="#dashboard">Dashboard</a><a href="#skills">Skills</a><a href="#plan">Plan</a><a href="#build">Build</a></nav>
+  <div class="top-right"><button id="theme" class="small-btn">Dark mode</button><button id="export" class="small-btn filled">Export</button></div>
+</header>
+
+<main>
+<section class="intro" id="dashboard">
+  <div>
+    <div class="eyebrow">PERSONAL CAREER PLANNER</div>
+    <h1>Make your next career move<br><span>more intentional.</span></h1>
+    <p>I built PathPilot to answer a simple question: <b>what should I learn next?</b> Pick a role, add the skills you already have, and get a practical plan with projects that prove the skills.</p>
+    <div class="intro-actions"><button class="primary" id="start">Build my plan →</button><button class="text-btn" id="demo">See an example</button></div>
+  </div>
+  <aside class="quick-card">
+    <div class="quick-label">CURRENT SNAPSHOT</div>
+    <div class="big-number" id="quickScore">0%</div>
+    <div class="quick-line"><span>Career fit</span><b id="quickCareer">Frontend Developer</b></div>
+    <div class="quick-line"><span>Skills selected</span><b id="quickSkills">0</b></div>
+    <div class="quick-line"><span>Plan progress</span><b id="quickProgress">0%</b></div>
+    <div class="mini-note">Your data stays in this browser.</div>
+  </aside>
+</section>
+
+<section class="workspace" id="skills">
+  <div class="section-title"><span>01</span><div><h2>Start with what you know</h2><p>Be honest. The goal is to find useful gaps, not inflate your score.</p></div></div>
+  <div class="work-grid">
+    <div class="box">
+      <label>ROLE I'M EXPLORING</label><select id="career"></select>
+      <div class="role-card"><div class="role-icon" id="roleIcon">FE</div><div><h3 id="roleName"></h3><p id="roleDesc"></p></div></div>
+      <label>MY CURRENT SKILLS</label>
+      <div id="skillsList" class="skills-list"></div>
+      <div class="skill-tip">Tip: click a skill again if you want to remove it.</div>
+    </div>
+    <div class="box result-box">
+      <div class="result-head"><div><label>READINESS</label><div class="score" id="score">0%</div></div><div class="score-label" id="scoreLabel">Just starting</div></div>
+      <div class="progress"><i id="progress"></i></div>
+      <div class="three-stats"><div><b id="owned">0</b><span>skills you have</span></div><div><b id="gaps">0</b><span>skills to work on</span></div><div><b id="high">0</b><span>high priority</span></div></div>
+      <div class="recommendation"><span>Next best step</span><strong id="nextSkill">Choose a few skills first</strong><p id="nextText">PathPilot will rank your gaps based on their importance to the selected role.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="plan">
+  <div class="section-title"><span>02</span><div><h2>Your 30-day experiment</h2><p>Four weeks of focused work beats a giant list of courses.</p></div><div class="week-progress" id="weekProgress">0 / 4 weeks</div></div>
+  <div id="weeks" class="weeks"></div>
+</section>
+
+<section class="section compare">
+  <div class="section-title"><span>03</span><div><h2>Career fit, without picking blindly</h2><p>See which nearby roles your current skills already support.</p></div></div>
+  <div id="careerCompare" class="compare-grid"></div>
+</section>
+
+<section class="section" id="build">
+  <div class="section-title"><span>04</span><div><h2>Build something worth showing</h2><p>These are deliberately bigger than tutorial clones.</p></div></div>
+  <div id="projects" class="project-grid"></div>
+</section>
+
+<section class="section extras">
+  <div class="section-title"><span>05</span><div><h2>Small tools that make the plan useful</h2><p>Features I would actually use while learning.</p></div></div>
+  <div class="tool-grid">
+    <article class="tool"><span class="tool-icon">⌁</span><h3>Learning streak</h3><div class="streak" id="streak">0</div><p>Click “Log today” when you complete a focused session.</p><button class="small-btn" id="logDay">Log today</button></article>
+    <article class="tool"><span class="tool-icon">✓</span><h3>Interview checkpoint</h3><p id="question">Explain one project you built without looking at your code.</p><button class="small-btn" id="newQuestion">New question</button></article>
+    <article class="tool"><span class="tool-icon">↗</span><h3>CV bullet</h3><textarea id="cv" readonly></textarea><button class="small-btn" id="copy">Copy bullet</button></article>
+  </div>
+</section>
+
+<section class="about">
+  <div><div class="eyebrow">WHY THIS PROJECT EXISTS</div><h2>Less “learn everything”.<br>More <span>learn the right thing.</span></h2></div>
+  <div><p>PathPilot is a frontend project built around a real product idea: career advice is often too broad, while beginners need a small number of concrete next steps.</p><p>The interface combines weighted skill scoring, a short learning plan, project recommendations and local progress tracking in one place.</p><div class="stack"><b>HTML</b><b>CSS</b><b>JavaScript</b><b>SVG</b><b>LocalStorage</b></div></div>
+</section>
+</main>
+<footer><span>PathPilot · a personal frontend project</span><span>Designed to be explained, extended and shipped.</span></footer>
+<script src="data/careers.js"></script><script src="js/app.js"></script>
+</body></html>
